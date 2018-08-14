@@ -10,8 +10,8 @@ docker run --name mysql -e MYSQL_ROOT_PASSWORD=YOURPASSWORD -d mariadb:latest
 
 ```bash
 
-docker run -itd --name opsi.shishacrew \
-  -h opsi.shishacrew.ddns.net \
+docker run -itd --name opsi \
+  -h opsi.docker.local \
   -v opsi_lib:/var/lib/opsi/ \
   -v opsi_etc:/etc/opsi/ \
   -p 0.0.0.0:445:445 \
@@ -20,7 +20,7 @@ docker run -itd --name opsi.shishacrew \
   -p 0.0.0.0:69:69/udp \
   -p 0.0.0.0:137:137/udp \
   -p 0.0.0.0:138:138/udp \
-  -e OPSI_USER=sysadmin\
+  -e OPSI_USER=sysadmin \
   -e OPSI_PASSWORD=linux123 \
   -e OPSI_BACKEND=mysql \
   -e OPSI_DB_HOST=db \
