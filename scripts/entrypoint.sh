@@ -28,11 +28,11 @@ fi
 
 	    /usr/bin/opsi-setup --auto-configure-samba
 
-/etc/init.d/opsiconfd start
+python /usr/local/bin/systemctl.py restart opsiconfd.service
 
-python /usr/local/bin/systemctl.py start opsipxeconfd.service
+python /usr/local/bin/systemctl.py restart opsipxeconfd.service
 
-python /usr/local/bin/systemctl.py start opsi-tftpd-hpa.service	    
+python /usr/local/bin/systemctl.py restart opsi-tftpd-hpa.service	    
 
 /etc/init.d/samba start
 

@@ -45,8 +45,4 @@ COPY ./scripts/entrypoint.sh /usr/local/bin/
 
 COPY ./scripts/systemctl.py /usr/local/bin/
 
-COPY ./scripts/opsiconfd /etc/init.d/
-
-RUN chmod +x /etc/init.d/opsiconfd
-
 EXPOSE 139/tcp 445/tcp 4447/tcp 69/udp 137/udp 138/udp 69/udp
