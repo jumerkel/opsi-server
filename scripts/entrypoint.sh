@@ -18,17 +18,17 @@ if [ "$OPSI_BACKEND" == "mysql" ]; then
 
 fi
 
-	    /usr/bin/opsi-setup --init-current-config
+/usr/bin/opsi-setup --init-current-config
 
-	    /usr/bin/opsi-setup --update-mysql
+/usr/bin/opsi-setup --update-mysql
 
-	    /usr/bin/opsi-setup --update-file
+/usr/bin/opsi-setup --update-file
 
-	    /usr/bin/opsi-setup --set-rights
+/usr/bin/opsi-setup --set-rights
 
-	    /usr/bin/opsi-setup --auto-configure-samba
+/usr/bin/opsi-setup --auto-configure-samba
 
-python /usr/local/bin/systemctl.py restart opsiconfd.service
+/etc/init.d/opsiconfd start
 
 python /usr/local/bin/systemctl.py restart opsipxeconfd.service
 
