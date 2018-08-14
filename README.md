@@ -1,11 +1,10 @@
 # opsi-server
 
-## Run
-
 ## mysql backend
 ```bash
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=YOURPASSWORD -d mariadb:latest
 ```
+
 
 ## Opsi
 
@@ -36,7 +35,6 @@ docker run -itd --name opsi.shishacrew \
 
 you need to run :
 
-
 ```bash
 
 docker exec -it docker-opsi /usr/local/bin/entrypoint.sh
@@ -45,6 +43,7 @@ docker exec -it docker-opsi /usr/local/bin/entrypoint.sh
 
 You can now connect to your OPSI via https://<DOCKER_IP>:4447 using sysadmin/linux123
 
+
 ### Vars
 
        OPSI_BACKEND: mysql
@@ -52,6 +51,7 @@ You can now connect to your OPSI via https://<DOCKER_IP>:4447 using sysadmin/lin
        OPSI_DB_OPSI_USER: opsi_db_user
        OPSI_DB_OPSI_PASSWORD: opsi_db_123_password
        OPSI_DB_ROOT_PASSWORD: root
+       
        
 ### Install default packages
 
