@@ -4,12 +4,8 @@
 ```bash
 docker run --name mysql -e MYSQL_ROOT_PASSWORD=YOURPASSWORD -d mariadb:latest
 ```
-
-
 ## Opsi
-
 ```bash
-
 docker run -itd --name opsi \
   -h opsi.docker.local \
   -v opsi_lib:/var/lib/opsi/ \
@@ -30,37 +26,24 @@ docker run -itd --name opsi \
   -e OPSI_DB_ROOT_PASSWORD=YOURPASSWORD \
   --link mysql:db \
   premiumize/opsi-server
-
 ```
-
+.
 you need to run :
-
 ```bash
-
 docker exec -it docker-opsi /usr/local/bin/entrypoint.sh
-
 ```
-
+.
 You can now connect to your OPSI via https://<DOCKER_IP>:4447 using sysadmin/linux123
-
-
+.
 ### Vars
-
        OPSI_BACKEND: mysql
        OPSI_DB_HOST: db
        OPSI_DB_OPSI_USER: opsi_db_user
        OPSI_DB_OPSI_PASSWORD: opsi_db_123_password
        OPSI_DB_ROOT_PASSWORD: root
-       
-       
+.       
 ### Install default packages
-
 ```bash
-
 docker attach opsi
 opsi-package-updater -vv install
-
 ```
-
-       
-              
