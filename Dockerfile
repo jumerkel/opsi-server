@@ -17,7 +17,7 @@ ENV OPSI_DB_ROOT_PASSWORD="$OPSI_DB_ROOT_PASSWORD"
 
 RUN apt-get update -qq
 
-RUN apt-get install -y -qq hostname apt-utils iputils-ping openssl net-tools openssh-client vim
+RUN apt-get install -y -qq hostname apt-utils iputils-ping openssl net-tools openssh-client vim nano
 
 RUN apt-get install -y -qq wget lsof host python-mechanize p7zip-full cabextract openbsd-inetd pigz cpio
 

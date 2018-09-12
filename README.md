@@ -26,9 +26,17 @@ docker run -itd --name opsi \
   -e OPSI_DB_ROOT_PASSWORD=YOURPASSWORD \
   --link mysql:db \
   premiumize/opsi-server
+  /bin/bash
 ```
 .
+edit /etc/hosts and copy it to /etc/opsi/hsots
 you need to run :
+```bash
+docker attach opsi
+nano /etc/hosts
+cp /etc/hosts /etc/opsi/hosts
+```
+you need to run, it will copy the /etc/opsi/hosts file to /etc/hosts every time you exec it:
 ```bash
 docker exec -it docker-opsi /usr/local/bin/entrypoint.sh
 ```
