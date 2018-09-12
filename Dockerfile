@@ -39,7 +39,7 @@ RUN apt-get clean
 
 RUN rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-VOLUME ["/var/lib/opsi/", "/etc/opsi/"]
+VOLUME ["/var/lib/opsi/", "/etc/opsi/", "/tftpboot/"]
 
 COPY ./scripts/entrypoint.sh /usr/local/bin/
 
@@ -47,7 +47,11 @@ COPY ./scripts/systemctl.py /usr/local/bin/
 
 COPY ./scripts/opsiconfd /etc/init.d/
 
+COPY ./scripts/opsi-setup /usr/bin/
+
 RUN chmod +x /etc/init.d/opsiconfd
+
+RUN chmod +x /usr/bin/opsi-setup
 
 EXPOSE 139/tcp 445/tcp 4447/tcp 69/udp 137/udp 138/udp 69/udp
 
