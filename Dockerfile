@@ -23,6 +23,14 @@ RUN apt-get install -y -qq wget lsof host python-mechanize p7zip-full cabextract
 
 RUN apt-get install -y -qq samba samba-common smbclient cifs-utils
 
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales
+
+RUN sed -i -e 's/# de_DE.UTF-8 UTF-8/de_DE.UTF-8 UTF-8/' /etc/locale.gen && \
+    dpkg-reconfigure --frontend=noninteractive locales && \
+    update-locale LANG=de_DE.UTF-8
+    
+ENV LANG de_DE.UTF-8 
+
 RUN echo "deb http://download.opensuse.org/repositories/home:/uibmz:/opsi:/4.1:/stable/Debian_9.0/ /" > /etc/apt/sources.list.d/opsi.list
 
 RUN wget -nv https://download.opensuse.org/repositories/home:uibmz:opsi:4.1:stable/Debian_9.0/Release.key -O Release.key 
