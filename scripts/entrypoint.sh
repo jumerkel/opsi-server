@@ -12,6 +12,8 @@ echo -e "$OPSI_PASSWORD\n$OPSI_PASSWORD\n" | smbpasswd -s -a $OPSI_USER
 
 /usr/sbin/usermod -aG pcpatch $OPSI_USER
 
+cp /etc/opsi/hosts /etc/hosts
+
 if [ "$OPSI_BACKEND" == "mysql" ]; then
 
 /usr/bin/opsi-setup --configure-mysql --unattended='{"address":"'$OPSI_DB_HOST'","dbAdminPass": "'${OPSI_DB_ROOT_PASSWORD}'", "dbAdminUser":"root", "database":"'${OPSI_DB}'"}'
