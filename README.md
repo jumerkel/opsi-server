@@ -10,6 +10,9 @@ docker run -itd --name opsi \
   -h opsi.docker.local \
   -v opsi_lib:/var/lib/opsi/ \
   -v opsi_etc:/etc/opsi/ \
+  -v opsi_tftp:/tftpboot/ \
+  -v /etc/localtime:/etc/localtime:ro \
+  -v /etc/timezone:/etc/timezone:ro \
   -p 0.0.0.0:445:445 \
   -p 0.0.0.0:139:139 \
   -p 0.0.0.0:4447:4447 \
