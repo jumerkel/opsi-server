@@ -42,4 +42,4 @@ mkdir -p /var/lib/opsi/repository
 
 opsi-package-updater -vv update
 
-exec "$@";
+exec "/bin/bash";
