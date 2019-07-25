@@ -1,4 +1,5 @@
 # OPSI Dockerfile
+# ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
 
 FROM debian:stretch
 
@@ -63,4 +64,4 @@ RUN chmod +x /usr/bin/opsi-setup
 
 EXPOSE 139/tcp 445/tcp 4447/tcp 69/udp 137/udp 138/udp 69/udp
 
-ENTRYPOINT ["/usr/local/bin/entrypoint.sh"]
+ENTRYPOINT ["/bin/bash"]
